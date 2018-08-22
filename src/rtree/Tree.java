@@ -219,6 +219,19 @@ public void AdjustParent(Node root,Node parent_node,Node[] child_nodes) {
 		return seeds;
 	}
 	
+	public void iterate(Node current_node, String path) {
+		if (current_node == null) {
+				return;
+			} else if (current_node.is_leaf == true) {
+				System.out.println(path + current_node.children.size());
+				return;
+			}else {
+			
+				for(int i =0; i <current_node.children.size();i++) {
+					iterate(current_node,path+i+"->");
+				}
+		}
+	}
 	
 
 }

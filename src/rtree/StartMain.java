@@ -60,7 +60,7 @@ public class StartMain {
 				fileReader.close();
 				
 				//Traverse the tree 
-				//r_tree.iterate(root , "root->");	
+				r_tree.iterate(root , "root->");	
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
