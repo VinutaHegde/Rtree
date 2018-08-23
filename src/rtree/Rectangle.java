@@ -21,6 +21,9 @@ public class Rectangle {
 	
 	public double GetArea() {
 		double area = (this.max_x_axis-this.min_x_axis)*(this.max_y_axis-this.min_y_axis);
+		//System.out.println(this.max_x_axis+" - "+this.min_x_axis + "="+(this.max_x_axis-this.min_x_axis));
+		//System.out.println(this.max_y_axis+" - "+this.min_y_axis + "="+(this.max_y_axis-this.min_y_axis));
+		//System.out.println("Area is:"+area);
 		return area;
 	}
 	

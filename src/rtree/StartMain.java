@@ -16,8 +16,7 @@ import java.io.IOException;
 
 public class StartMain {
 
-	public static int max_node_capacity = 4;
-	public static int min_node_capacity = 2;
+
 	public static void main(String[] args) {
 		// 
 			try {
@@ -27,15 +26,7 @@ public class StartMain {
 				FileReader fileReader = new FileReader(file);
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
 			
-				double max_x_axis = 99999.00; // infinity
-				double max_y_axis= 99999.00;
-				double min_x_axis = -99999.00; // -infinity
-				double min_y_axis= -99999.00;
-				boolean is_root = true;
-				boolean is_leaf = true;
-				Node parent_node = null;
-				
-				Node root = new Node(parent_node,max_x_axis ,max_y_axis, min_x_axis, min_y_axis,  is_root, is_leaf);		
+		
 				Tree r_tree = new Tree(); 
 				
 				String line;
@@ -47,20 +38,21 @@ public class StartMain {
 					double x_axis = Double.parseDouble(row[1]);
 					double y_axis = Double.parseDouble(row[2]); 
 					
+					System.out.println(x_axis +","+y_axis);
 					double max_x = x_axis;
 					double max_y= y_axis;
 					double min_x =x_axis;
 					double min_y= y_axis;
 					
-					Node ele_node = new Node(null,max_x ,max_y, min_x, min_y,  is_root=false, is_leaf=false);
+					Node ele_node = new Node(null,max_x ,max_y, min_x, min_y,  false, false);
 					//Rectangle new_entry = new Rectangle(max_x,max_y,min_x,min_y);
 					//insert the point to tree
-					r_tree.Insert(root,root, ele_node);			
+					r_tree.Insert(r_tree.root,ele_node);			
 					}
 				fileReader.close();
 				
 				//Traverse the tree 
-				r_tree.iterate(root , "root->");	
+				r_tree.iterate(r_tree.root,"root->");	
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

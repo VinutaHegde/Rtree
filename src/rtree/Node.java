@@ -39,19 +39,22 @@ public class Node {
 		this.rectangle.min_y_axis = min_y_axis;	
 		this.is_root = is_root;
 		this.is_leaf = is_leaf;
-		this.max_node_capacity = StartMain.max_node_capacity;
+		this.max_node_capacity = Tree.max_node_capacity;
 		
 		if(is_root == true) {
 			this.min_node_capacity = 0;
 			//this.parent_node  = null;
 		}else {
-			this.min_node_capacity = StartMain.min_node_capacity;
+			this.min_node_capacity = Tree.min_node_capacity;
 			this.parent_node  = parent_node;
 		}
 
 		//this.rectangles = null;
 		//this.children = null;
 	}
+	
+	
+	
 	
 
 }
