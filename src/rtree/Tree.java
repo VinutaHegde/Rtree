@@ -1,13 +1,11 @@
 package rtree;
 
-import java.io.BufferedReader;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 public class Tree {
 
@@ -192,7 +190,7 @@ public class Tree {
 					double d2 = temp2.rectangle.GetArea() - G2.rectangle.GetArea();
 
 					double d = Math.abs(d1 - d2);
-
+					//System.out.println(d);
 					if (max_d <= d) {
 						max_d = d;
 						d1_opt = d1;
@@ -276,7 +274,9 @@ public class Tree {
 		 * create new node, update its rectangles based on node to be added return new
 		 * node
 		 */
-		Node updated_node = current_Node;
+		Node updated_node = new Node(current_Node.parent_node,current_Node.rectangle.max_x_axis,current_Node.rectangle.max_y_axis,
+				current_Node.rectangle.min_x_axis,current_Node.rectangle.min_y_axis,current_Node.is_root,current_Node.is_leaf);
+		 
 
 		if (updated_node.rectangle.max_x_axis < new_entry.max_x_axis) {
 			updated_node.rectangle.max_x_axis = new_entry.max_x_axis;

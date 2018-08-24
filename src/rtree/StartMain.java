@@ -22,7 +22,7 @@ public class StartMain {
 		try {
 			 File file = new File(".\\input\\GSV_spatialdata.txt"); // input file
 			//File file = new File(".\\input\\GSV_spatialdataSample100.txt"); // input file
-			// File file = new File(".\\input\\sampledata"); // input file
+			 //File file = new File(".\\input\\sampledata"); // input file
 
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
