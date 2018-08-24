@@ -20,8 +20,8 @@ public class StartMain {
 	public static void main(String[] args) {
 
 		try {
-			// File file = new File(".\\input\\GSV_spatialdata.txt"); // input file
-			File file = new File(".\\input\\GSV_spatialdataSample100.txt"); // input file
+			 File file = new File(".\\input\\GSV_spatialdata.txt"); // input file
+			//File file = new File(".\\input\\GSV_spatialdataSample100.txt"); // input file
 			// File file = new File(".\\input\\sampledata"); // input file
 
 			FileReader fileReader = new FileReader(file);

@@ -1,5 +1,14 @@
 package rtree;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Tree {
 
 	public static int max_node_capacity = 4;
@@ -311,10 +320,28 @@ public class Tree {
 	}
 
 	public void iterate(Node current_node, String path) {
+		
+		
+		File file = new File(".\\SampleOutPut\\GSV_spatialdataSampleOutput.txt");
+
+
 		if (current_node == null) {
 			return;
 		} else if (current_node.is_leaf == true) {
+			try {
+			
+			FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
+			BufferedWriter bw = new BufferedWriter(fw);
 			System.out.println(path + current_node.children.size());
+			bw.write(path + current_node.children.size()+"\n");
+			bw.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return;
 		} else {
 
@@ -322,6 +349,8 @@ public class Tree {
 				iterate(current_node.children.get(i), path + Integer.toString(i) + "thNode->");
 			}
 		}
+		
+		
 	}
 
 }
